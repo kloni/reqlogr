@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function(req, res) {
-  console.log(req.body);
+  console.log(JSON.stringify(req.body));
    if (req.body.payment && req.body.payment.statuses && req.body.payment.statuses.status) {
       var status = req.body.payment.statuses.status;
       for (var i=0; i<status.length; i++) {
