@@ -14,3 +14,10 @@ app.post('/', function(req, res) {
   console.log(req.body);
   res.send('OK');
 });
+
+var server = app.listen(process.env.PORT || config.port, function () {
+   var host = server.address().address
+   var port = server.address().port
+
+   console.log("Example app listening at http://%s:%s", host, port)
+});
