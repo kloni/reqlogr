@@ -9,6 +9,7 @@
     "soap": "*"
   },
   "scripts": {
+    "start": "node server.js",
     "serve": "node server.js",
     "debug": "node --inspect server.js"
   },
