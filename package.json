@@ -1,0 +1,19 @@
+{
+  "name": "reqlogr",
+  "description": "",
+  "version": "0.1.0",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "^4.17.1",
+    "soap": "*"
+  },
+  "scripts": {
+    "serve": "node server.js",
+    "debug": "node --inspect server.js"
+  },
+  "config": {
+    "port": "8080"
+  },
+  "private": true
+}
