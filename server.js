@@ -36,7 +36,7 @@ app.post('/', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  res.render('index', requestStore);
+  res.render('index', { "request": requestStore });
   requestStore.splice(0, requestStore.length);
 });
 
