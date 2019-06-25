@@ -19,7 +19,7 @@ app.engine('html', cons.mustache);
 // set .html as the default extension 
 app.set('view engine', 'html');
 
-app.set('views', __dirname + '/views');
+app.set('views', __dirname);
 
 app.post('/', function(req, res) {
   console.log(JSON.stringify(req.body));
