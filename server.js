@@ -7,10 +7,6 @@ var app = express();
 
 app.use(express.json());
 
-app.get('/', function (req, res) {
-   res.send('OK');
-});
-
 var requestStore = [];
 
 // assign the mustache engine to .html files
