@@ -5,7 +5,7 @@ var cons = require('consolidate');
 
 var app = express();
 
-app.use(express.json());
+//app.use(express.json());
 
 var requestStore = [];
 
@@ -18,10 +18,11 @@ app.set('view engine', 'html');
 app.set('views', __dirname);
 
 app.post('/', function(req, res) {
-  console.log(req);
-  for (var key in req) {
-    console.log(key + "=" + req[key]);
-  }
+  console.log(req.params);
+  console.log(req.query);
+  console.log(req.header);
+  console.log(req.body);
+  
   if (req.body.payment) {
     if (req.body.payment.statuses && req.body.payment.statuses.status) {
       var status = req.body.payment.statuses.status;
@@ -29,8 +30,6 @@ app.post('/', function(req, res) {
         console.log(status[i].code + ": " + status[i].description);
       }
     }
-  } else {
-    console.log(req.body);
   }
   req['bodyString'] = JSON.stringify(req.body);
   requestStore.push(req);
