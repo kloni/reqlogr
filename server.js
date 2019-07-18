@@ -6,7 +6,7 @@ var cons = require('consolidate');
 var app = express();
 
 app.use(express.json({ type: 'application/json*' }));
-app.use(express.urlencoded({ type: 'text/plain' }));
+app.use(bodyParser.text({ type: 'text/plain' }));
 
 var requestStore = [];
 
