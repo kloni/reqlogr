@@ -18,7 +18,7 @@ app.set('view engine', 'html');
 app.set('views', __dirname);
 
 app.post('/', function(req, res) {
-  console.log(JSON.stringify(req));
+  console.log(req);
   if (req.body.payment) {
     if (req.body.payment.statuses && req.body.payment.statuses.status) {
       var status = req.body.payment.statuses.status;
