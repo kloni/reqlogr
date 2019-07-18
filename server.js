@@ -19,6 +19,9 @@ app.set('views', __dirname);
 
 app.post('/', function(req, res) {
   console.log(req);
+  for (var key in req) {
+    console.log(key + "=" + req[key]);
+  }
   if (req.body.payment) {
     if (req.body.payment.statuses && req.body.payment.statuses.status) {
       var status = req.body.payment.statuses.status;
