@@ -5,7 +5,7 @@ var cons = require('consolidate');
 
 var app = express();
 
-//app.use(express.json());
+app.use(express.json({ type: 'application/json*' }));
 
 var requestStore = [];
 
@@ -20,7 +20,7 @@ app.set('views', __dirname);
 app.post('/', function(req, res) {
   console.log(req.params);
   console.log(req.query);
-  console.log(req.header);
+  console.log(req.headers);
   console.log(req.body);
   
   if (req.body.payment) {
