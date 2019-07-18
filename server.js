@@ -26,6 +26,8 @@ app.post('/', function(req, res) {
         console.log(status[i].code + ": " + status[i].description);
       }
     }
+  } else {
+    console.log(req.body);
   }
   req['bodyString'] = JSON.stringify(req.body);
   requestStore.push(req);
