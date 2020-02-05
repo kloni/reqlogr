@@ -1,7 +1,7 @@
 var config = require('./package').config;
 var express = require('express');
 var bodyParser = require('body-parser');
-var cons = require('consolidate');
+var mustacheExpress = require('mustache-express');
 
 var app = express();
 
@@ -11,10 +11,10 @@ app.use(bodyParser.text({ type: 'text/plain' }));
 var requestStore = [];
 
 // assign the mustache engine to .html files
-app.engine('html', cons.mustache);
+app.engine('mustache', mustacheExpress);
 
 // set .html as the default extension 
-app.set('view engine', 'html');
+app.set('view engine', 'mustache');
 
 app.set('views', __dirname);
 
