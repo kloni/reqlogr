@@ -11,7 +11,7 @@ app.use(bodyParser.text({ type: 'text/plain' }));
 var requestStore = [];
 
 // assign the mustache engine to .html files
-app.engine('mustache', mustacheExpress);
+app.engine('mustache', mustacheExpress(__dirname, '.html));
 
 // set .html as the default extension 
 app.set('view engine', 'mustache');
