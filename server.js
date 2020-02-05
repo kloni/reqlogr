@@ -11,10 +11,10 @@ app.use(bodyParser.text({ type: 'text/plain' }));
 var requestStore = [];
 
 // assign the mustache engine to .html files
-app.engine('mustache', mustacheExpress(__dirname, '.html'));
+app.engine('html', mustacheExpress());
 
 // set .html as the default extension 
-app.set('view engine', 'mustache');
+app.set('view engine', 'html');
 
 app.set('views', __dirname);
 
@@ -24,7 +24,7 @@ app.post('/', function(req, res) {
   console.log(req.headers);
   console.log(req.body);
   
-  //req['krypto'] = req.params.krypto;
+  req['params'] = JSON.stringify(req.params);
   
   if (req.body.payment) {
     if (req.body.payment.statuses && req.body.payment.statuses.status) {
