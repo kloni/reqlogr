@@ -1,0 +1,11 @@
+<html>
+  <head><title>reqlogr - Requests</title></head>
+  <body>
+    <h1>Requests</h1>
+    {{#request}}
+    <pre>
+    {{{bodyString}}}
+    </pre>
+    {{/request}}
+  </body>
+</html>
