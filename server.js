@@ -24,7 +24,7 @@ app.post('/', function(req, res) {
   console.log(req.headers);
   console.log(req.body);
   
-  req['krypto'] = req.params.krypto;
+  //req['krypto'] = req.params.krypto;
   
   if (req.body.payment) {
     if (req.body.payment.statuses && req.body.payment.statuses.status) {
