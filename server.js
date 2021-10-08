@@ -6,7 +6,7 @@ var mustacheExpress = require('mustache-express');
 var app = express();
 
 app.use(express.json({ type: 'application/json*' }));
-app.use(bodyParser.text({ type: 'text/plain' }));
+app.use(bodyParser.text());
 
 var requestStore = [];
 
@@ -19,11 +19,10 @@ app.set('view engine', 'html');
 app.set('views', __dirname);
 
 app.post('/', function(req, res) {
-  console.log(req);
   console.log(req.params);
   console.log(req.query);
   console.log(req.headers);
-  console.log(JSON.stringify(req.body));
+  console.log(req.body);
   
   req['params'] = JSON.stringify(req.params);
   
@@ -36,7 +35,7 @@ app.post('/', function(req, res) {
     }
     req['bodyString'] = JSON.stringify(req.body);
   } else {
-    req['bodyString'] = req;
+    req['bodyString'] = req.body;
   }
   
   requestStore.push(req);
