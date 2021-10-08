@@ -19,10 +19,11 @@ app.set('view engine', 'html');
 app.set('views', __dirname);
 
 app.post('/', function(req, res) {
+  console.log(req);
   console.log(req.params);
   console.log(req.query);
   console.log(req.headers);
-  console.log(req.body);
+  console.log(JSON.stringify(req.body));
   
   req['params'] = JSON.stringify(req.params);
   
@@ -35,7 +36,7 @@ app.post('/', function(req, res) {
     }
     req['bodyString'] = JSON.stringify(req.body);
   } else {
-    req['bodyString'] = JSON.stringify(req);
+    req['bodyString'] = req;
   }
   
   requestStore.push(req);
