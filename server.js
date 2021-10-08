@@ -35,7 +35,7 @@ app.post('/', function(req, res) {
     }
     req['bodyString'] = JSON.stringify(req.body);
   } else {
-    req['bodyString'] = JSON.stringify(req.body);
+    req['bodyString'] = JSON.stringify(req);
   }
   
   requestStore.push(req);
