@@ -6,7 +6,7 @@ var mustacheExpress = require('mustache-express');
 var app = express();
 
 app.use(express.json({ type: 'application/json*' }));
-app.use(bodyParser.text());
+app.use(bodyParser.text({type: '*/*'}));
 
 var requestStore = [];
 
