@@ -39,7 +39,7 @@ app.post('/', function(req, res) {
   }
   
   requestStore.push(req);
-  res.send('OK');
+  res.send('TSOK');
 });
 
 app.get('/', function(req, res) {
